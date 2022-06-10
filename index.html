@@ -587,7 +587,7 @@ https://templatemo.com/tm-570-chain-app-dev
           </div>
         </div>
         <div class="col-lg-6 offset-lg-3">
-          <form id="search" action="#" method="GET">
+          <form id="search" action="./assets/email/enviar_email.php" method="POST">
             <div class="row">
               <div class="col-lg-6 col-sm-6">
                 <fieldset>
@@ -605,11 +605,11 @@ https://templatemo.com/tm-570-chain-app-dev
                   <input type="text" name="empresa" class="empresa" placeholder="Empresa" autocomplete="on" required>
                 </fieldset>
                 <fieldset>
-                  <input type="address" name="address" class="email" placeholder="E-mail de contato" autocomplete="on" required>
+                  <input type="address" name="email" class="email" placeholder="E-mail de contato" autocomplete="on" required>
                 </fieldset>
                 <fieldset required>
-                  <select class="form-control">
-                    <option selected>Projeto</option>
+                  <select name="servico" class="form-control">
+                    <option selected>Serviço</option>
                     <option>Gestão de Tráfego</option>
                     <option>Web Analytics</option>
                     <option>Desenvolvimento de Sites</option>
@@ -619,7 +619,7 @@ https://templatemo.com/tm-570-chain-app-dev
               </div>
               <div class="col-lg-12 col-sm-12">
                 <fieldset>
-                  <input type="text" name="address" class="email" placeholder="Informações adicionais" autocomplete="on" required>
+                  <input type="text" name="mensagem" class="text" placeholder="Informações adicionais" autocomplete="on" required>
                 </fieldset>
               </div>
               <br>
