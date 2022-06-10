@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - main
-  jobs:
-    FTP-Deploy-Action:
+jobs:
+  FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
@@ -12,8 +12,8 @@ on:
         with:
           fetch-depth: 2
       - name: FTP-Deploy-Action
-        uses: SanKirkland/FTP-Deploy-Actione3.1.1
+        uses: SanKirkland/FTP-Deploy-Action@3.1.1
         with:
-        ftp-server: ${{secrets.FTP SERVER}}
-        ftp-usernane: ${{secrets.FTP USERNAME}}
-        1tp-password: ${{secrets.FTP_PASSWORD}}
+          ftp-server: ${{secrets.FTP SERVER}}
+          ftp-usernane: ${{secrets.FTP USERNAME}}
+          1tp-password: ${{secrets.FTP_PASSWORD}}
