@@ -738,6 +738,8 @@ header
     border: none !important;
     background: #f7f7f7 !important;
     color: #191a20 !important;
+    width: 100%;
+    border-radius: 0%;
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
@@ -933,6 +935,7 @@ Banner Style
 
 .main-banner .left-content .first-button {
   margin-right: 15px;
+  margin-bottom: 10px;
 }
 
 .main-banner .left-content .white-button {
