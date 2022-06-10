@@ -1,5 +1,7 @@
 <?php
 
+    echo "iniciando...";
+
     $nome=$_POST['nome'];
     $telefone=$_POST['telefone'];
     $site=$_POST['site'];
@@ -23,7 +25,6 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-
 
     $mail = new PHPMailer(true);
     $mail->isSMTP(); // Não modifique
