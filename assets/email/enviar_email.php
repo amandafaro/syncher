@@ -1,7 +1,5 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-
     $nome=$_POST['nome'];
     $telefone=$_POST['telefone'];
     $site=$_POST['site'];
@@ -22,7 +20,12 @@ use PHPMailer\PHPMailer\PHPMailer;
     require("vendor/phpmailer/src/SMTP.php");
     require ("vendor/phpmailer/src/Exception.php");
 
-$mail = new PHPMailer\PHPMailer\PHPMailer(true);
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+
+    $mail = new PHPMailer(true);
     $mail->isSMTP(); // Não modifique
     $mail->Host       = 'servidor.hostgator.com.br';  // SEU HOST (HOSPEDAGEM)
     $mail->SMTPAuth   = true;                        // Manter em true
