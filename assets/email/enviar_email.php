@@ -1,4 +1,7 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+
     $nome=$_POST['nome'];
     $telefone=$_POST['telefone'];
     $site=$_POST['site'];
@@ -15,17 +18,17 @@
     $mensagem.='<b>Serviço:</b> '.$servico.'<br>';
     $mensagem.='<b>Data de envio:</b> '.$date.'<br>';
     $mensagem.='<b>Informações adicionais:</b><br> '.$msg;
-    require("phpmailer/src/PHPMailer.php");
-    require("phpmailer/src/SMTP.php");
-    require ("phpmailer/src/Exception.php");
+    require("vendor/phpmailer/src/PHPMailer.php");
+    require("vendor/phpmailer/src/SMTP.php");
+    require ("vendor/phpmailer/src/Exception.php");
 
-$mail = new PHPMailer\PHPMailer\PHPMailer();
+$mail = new PHPMailer\PHPMailer\PHPMailer(true);
     $mail->isSMTP(); // Não modifique
     $mail->Host       = 'servidor.hostgator.com.br';  // SEU HOST (HOSPEDAGEM)
     $mail->SMTPAuth   = true;                        // Manter em true
     $mail->Username   = 'contato@syncher.com.br';   //SEU USUÁRIO DE EMAIL
     $mail->Password   = '@Turner505';                   //SUA SENHA DO EMAIL SMTP password
-    $mail->SMTPSecure = 'ssl';    //TLS OU SSL-VERIFICAR COM A HOSPEDAGEM
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;    //TLS OU SSL-VERIFICAR COM A HOSPEDAGEM
     $mail->Port       = 465;     //TCP PORT, VERIFICAR COM A HOSPEDAGEM
     $mail->CharSet = 'UTF-8';    //DEFINE O CHARSET UTILIZADO
     
@@ -36,9 +39,9 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->addReplyTo('amandafaro@hotmail.com', $nome);  //AQUI SERA O EMAIL PARA O QUAL SERA RESPONDIDO                  
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Mensagem do Formulário'; //ASSUNTO
-    $mail->Body    = $mensagem;  //CORPO DA MENSAGEM
-    $mail->AltBody = $mensagem;  //CORPO DA MENSAGEM EM FORMA ALT
+    $mail->Subject = utf8_decode('Mensagem do Formulário'); //ASSUNTO
+    $mail->Body    = utf8_decode($mensagem);  //CORPO DA MENSAGEM
+    $mail->AltBody = utf8_decode($mensagem);  //CORPO DA MENSAGEM EM FORMA ALT
 
     // $mail->send();
     if(!$mail->Send()) {
