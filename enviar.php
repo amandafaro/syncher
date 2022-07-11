@@ -1,6 +1,6 @@
 <?php
 $to = "amandafaro@hotmail.com, amandafaroaf@gmail.com";
-$subject = "HTML email";
+$subject = "Formulário de Lead";
 
 $nome=$_POST['nome'];
 $telefone=$_POST['telefone'];
