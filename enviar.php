@@ -2,23 +2,32 @@
 $to = "amandafaro@hotmail.com, amandafaroaf@gmail.com";
 $subject = "HTML email";
 
+$nome=$_POST['nome'];
+$telefone=$_POST['telefone'];
+$site=$_POST['site'];
+$empresa=$_POST['empresa'];
+$email=$_POST['email'];
+$servico=$_POST['servico'];
+$msg=$_POST['mensagem'];
+$date=date("d/m/Y");
+$message= 'Esta mensagem foi enviada através do formulário<br><br>';
+$message.='<b>Nome: </b>'.$nome.'<br>';
+$message.='<b>Telefone:</b> '.$telefone.'<br>';
+$message.='<b>E-Mail:</b> '.$email.'<br>';
+$message.='<b>Site:</b> '.$site.'<br>';
+$message.='<b>Serviço:</b> '.$servico.'<br>';
+$message.='<b>Data de envio:</b> '.$date.'<br>';
+$message.='<b>Informações adicionais:</b><br> '.$msg;
+
 $message = "
 <html>
 <head>
-<title>HTML email</title>
+<title>Formulário de Lead</title>
 </head>
 <body>
-<p>This email contains HTML Tags!</p>
-<table>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-</tr>
-<tr>
-<td>John</td>
-<td>Doe</td>
-</tr>
-</table>
+
+".$message."
+
 </body>
 </html>
 ";
