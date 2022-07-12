@@ -41,4 +41,7 @@ $headers .= 'From: <amandafaro@hotmail.com>' . "\r\n";
 $headers .= 'Cc: amandafaro@hotmail.com' . "\r\n";
 
 mail($to,$subject,$message,$headers);
+
+header('Location: https://syncher.com.br/obrigado.html');
+
 ?>
